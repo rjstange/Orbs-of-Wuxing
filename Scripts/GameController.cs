@@ -72,6 +72,14 @@ public class GameController : MonoBehaviour
 
             yangVictoryMessage.ShowThenHide();
         }
+        else
+        {
+            yinWins = 0;
+            yangWins = 0;
+
+            UpdateScore(yinWinsText, "Yin: ", yinWins);
+            UpdateScore(yangWinsText, "Yang: ", yangWins);
+        }
 
         // Rewards or penalizes players based on if they won or not
         for (int i = 0; i < numPlayers; i++)

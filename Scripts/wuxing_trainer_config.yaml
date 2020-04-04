@@ -1,0 +1,37 @@
+default:
+    trainer: sac
+    batch_size: 1024
+    buffer_size: 1000000
+    buffer_init_steps: 10000
+    init_entcoef: 1
+    learning_rate: 9e-4
+    learning_rate_schedule: constant
+    max_steps: 3e5
+    memory_size: 256
+    normalize: true
+    num_update: 1
+    train_interval: 5
+    time_horizon: 675
+    sequence_length: 64
+    summary_freq: 10000
+    tau: 0.005
+    use_recurrent: false
+    vis_encode_type: simple
+    save_replay_buffer: true
+    reward_signals:
+        extrinsic:
+            strength: 1.0
+            gamma: 0.99
+    self_play:
+        window: 10
+        play_against_current_self_ratio: 0.5
+        save_steps: 50000
+        swap_steps: 50000
+
+PlayerBrain:
+    hidden_units: 512
+    num_layers: 6
+
+BallBrain:
+    hidden_units: 512
+    num_layers: 3
